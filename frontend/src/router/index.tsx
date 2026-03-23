@@ -1,9 +1,12 @@
 import { Navigate, createBrowserRouter } from 'react-router-dom'
 
-import { PATHS } from '../config/paths'
-import { Ad } from '../pages/Ad'
-import { Ads } from '../pages/Ads'
-import { EditAd } from '../pages/EditAd'
+import { Ad } from '@/pages/Ad'
+import { Ads } from '@/pages/Ads'
+import { EditAd } from '@/pages/EditAd'
+
+import { PATHS } from '@/config/paths'
+
+import { AdsLayout } from '@/layouts/AdsLayout/AdsLayout'
 
 const { ROOT, ADS, AD_EDIT, AD } = PATHS
 
@@ -17,7 +20,8 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: ADS,
-				Component: Ads
+				element: <AdsLayout />,
+				children: [{ index: true, Component: Ads }]
 			},
 			{
 				path: AD,

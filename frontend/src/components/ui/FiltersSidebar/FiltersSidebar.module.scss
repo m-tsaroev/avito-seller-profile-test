@@ -1,0 +1,41 @@
+.sidebar {
+	min-width: 256px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+	height: auto !important;
+}
+
+.body {
+	background-color: var(--mantine-color-white);
+	padding: 16px;
+	display: grid;
+	row-gap: 10px;
+	border-radius: 8px;
+
+	@include when-dark {
+		background-color: var(--mantine-color-dark-6);
+	}
+}
+
+.categories {
+	display: grid;
+}
+
+.collapse {
+	display: grid;
+	row-gap: 8px;
+	padding-block: 8px;
+	transition-duration: 0.2s;
+}
+
+.button {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 0;
+	border: none;
+	outline: none;
+	background: none;
+}

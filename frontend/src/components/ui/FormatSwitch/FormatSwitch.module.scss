@@ -1,0 +1,38 @@
+.switcher {
+	display: flex;
+	align-items: center;
+	column-gap: 21px;
+	position: relative;
+	border-radius: 8px;
+	background-color: var(--mantine-color-body);
+	padding: 7px 8px;
+}
+
+.button {
+	@include flex-center;
+
+	&.isActive {
+		svg {
+			stroke: #1890ff;
+			fill: #1890ff;
+		}
+	}
+
+	background: none;
+	border: none;
+	outline: none;
+	padding: 0;
+}
+
+.line {
+	@include abs-x;
+
+	display: block;
+	height: calc(100% - 4px);
+	width: 2px;
+	background-color: var(--mantine-color-white);
+
+	@include when-dark {
+		background-color: var(--mantine-color-dark-6);
+	}
+}

@@ -1,0 +1,33 @@
+.header {
+	padding-top: 12px;
+	margin-bottom: 16px;
+}
+
+.body {
+	display: grid;
+	row-gap: 16px;
+}
+
+.counter {
+	display: flex;
+	align-items: center;
+	column-gap: 4px;
+}
+
+.tools {
+	display: flex;
+	column-gap: 24px;
+	align-items: center;
+	border-radius: 8px;
+	padding: 12px;
+	background-color: var(--mantine-color-white);
+
+	@include when-dark {
+		background-color: var(--mantine-color-dark-6);
+	}
+}
+
+.format {
+	display: flex;
+	column-gap: 16px;
+}

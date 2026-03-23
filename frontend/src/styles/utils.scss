@@ -1,0 +1,9 @@
+.container {
+	width: 100%;
+	max-width: 1335px;
+	margin-inline: auto;
+}
+
+.visually-hidden {
+	@include visually-hidden;
+}

@@ -1,5 +1,9 @@
+import { useParams } from 'react-router-dom'
+
 const EditAd = () => {
-	return <div>EDIT</div>
+	const { id } = useParams()
+
+	return <div>EDIT {id}</div>
 }
 
 export { EditAd }

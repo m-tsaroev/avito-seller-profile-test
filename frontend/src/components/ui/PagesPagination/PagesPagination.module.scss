@@ -1,0 +1,13 @@
+.pagination {
+	[data-active] {
+		background: none;
+		color: #1890ff;
+		border-color: #1890ff;
+
+		&:hover {
+			background: none;
+			color: #1890ff;
+			border-color: #1890ff;
+		}
+	}
+}
