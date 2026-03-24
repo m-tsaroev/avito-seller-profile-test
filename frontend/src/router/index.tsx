@@ -6,13 +6,14 @@ import { EditAd } from '@/pages/EditAd'
 
 import { PATHS } from '@/config/paths'
 
-import { AdsLayout } from '@/layouts/AdsLayout/AdsLayout'
+import { Layout } from '@/layouts/Layout'
 
 const { ROOT, ADS, AD_EDIT, AD } = PATHS
 
 export const router = createBrowserRouter([
 	{
 		path: ROOT,
+		element: <Layout />,
 		children: [
 			{
 				index: true,
@@ -20,7 +21,6 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: ADS,
-				element: <AdsLayout />,
 				children: [{ index: true, Component: Ads }]
 			},
 			{
@@ -28,7 +28,7 @@ export const router = createBrowserRouter([
 				Component: Ad
 			},
 			{
-				path: AD_EDIT,
+				path: AD_EDIT(),
 				Component: EditAd
 			}
 		]

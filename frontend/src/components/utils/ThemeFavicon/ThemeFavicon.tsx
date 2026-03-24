@@ -7,7 +7,8 @@ const ThemeFavicon = () => {
 	const { colorScheme } = useMantineColorScheme()
 
 	useEffect(() => {
-		const favicon = document.querySelector('link[rel="icon"]')
+		const favicon: HTMLLinkElement | null =
+			document.querySelector('link[rel="icon"]')
 		const systemTheme = getSystemTheme()
 
 		if (favicon) {

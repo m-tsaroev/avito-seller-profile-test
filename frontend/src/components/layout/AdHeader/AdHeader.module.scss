@@ -1,0 +1,12 @@
+.body {
+	padding-block: 32px;
+	margin-bottom: 32px;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.button {
+	justify-self: start;
+	display: flex;
+	align-items: center;
+	column-gap: 4px;
+}

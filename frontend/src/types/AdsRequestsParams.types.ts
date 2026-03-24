@@ -5,5 +5,6 @@ export type AdsRequestsParams = {
 	needsRevision: boolean
 	categories?: string | null
 	sortColumn?: 'title' | 'createdAt' | null
-	sortDirection?: 'asc' | 'desc' | null // asc - по возрастанию, desc - по убыванию
+	sortDirection?: 'asc' | 'desc' | null 
 }
+ 

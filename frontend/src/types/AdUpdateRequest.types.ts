@@ -1,4 +1,5 @@
 export type ItemUpdateIn = {
+	id: number
 	category: 'auto' | 'real_estate' | 'electronics'
 	title: string
 	description?: string
@@ -6,26 +7,26 @@ export type ItemUpdateIn = {
 	params: AutoItemParams | RealEstateItemParams | ElectronicsItemParams
 }
 
-type AutoItemParams = {
+export type AutoItemParams = {
 	brand?: string
 	model?: string
 	yearOfManufacture?: number
-	transmission?: 'automatic' | 'manual'
+	transmission: 'automatic' | 'manual'
 	mileage?: number
 	enginePower?: number
 }
 
-type RealEstateItemParams = {
-	type?: 'flat' | 'house' | 'room'
+export type RealEstateItemParams = {
+	type: 'flat' | 'house' | 'room'
 	address?: string
 	area?: number
 	floor?: number
 }
 
-type ElectronicsItemParams = {
-	type?: 'phone' | 'laptop' | 'misc'
+export type ElectronicsItemParams = {
+	type: 'phone' | 'laptop' | 'misc'
 	brand?: string
 	model?: string
-	condition?: 'new' | 'used'
+	condition: 'new' | 'used'
 	color?: string
 }

@@ -17,7 +17,7 @@ import { useShowCardsFormatStore } from '@/store/showCardsFormat'
 import { cutString } from '@/utils/cutString'
 import { getSystemTheme } from '@/utils/getSystemTheme'
 
-import { AD_TYPE } from '@/config/adType'
+import { AD_TYPE } from '@/constants/adType'
 
 import styles from './AdCard.module.scss'
 import type { AdCardProps } from './AdCard.types'
@@ -30,7 +30,7 @@ const cardVariants: Variants = {
 	}
 }
 
-const MotionLink = motion(Link)
+const MotionLink = motion.create(Link)
 
 const AdCard = (props: AdCardProps) => {
 	const { title, id, price, category, needsRevision } = props

@@ -11,12 +11,21 @@ const theme = createTheme({
 	headings: {
 		sizes: {
 			h1: {
-				fontSize: '40px',
-				lineHeight: '1.2'
+				fontSize: '30px',
+				lineHeight: '1.3'
+			},
+			h2: {
+				fontSize: '30px',
+				lineHeight: '1.3'
+			},
+			h4: {
+				fontSize: '22px',
+				lineHeight: '1.3'
 			},
 			h5: {
 				fontSize: '16px',
-				lineHeight: '1.5'
+				lineHeight: '1.5',
+				fontWeight: '400'
 			}
 		}
 	}
