@@ -3,7 +3,7 @@
     "id": 1,
     "category": "auto",
     "title": "Почти новая Mitsubishi Lancer",
-    "description": "",
+    "description": "adfasd",
     "price": 300000,
     "createdAt": "2026-02-12T00:00:00.000Z",
     "updatedAt": "2026-02-12T00:00:00.000Z",
@@ -20,7 +20,7 @@
     "id": 2,
     "category": "real_estate",
     "title": "Видовая двушка",
-    "description": "",
+    "description": "adsfasf",
     "price": 23200000,
     "createdAt": "2026-02-14T00:00:00.000Z",
     "updatedAt": "2026-02-14T00:00:00.000Z",
@@ -35,7 +35,7 @@
     "id": 3,
     "category": "electronics",
     "title": "Новенький айфон 17 Про Макс",
-    "description": "",
+    "description": "asdfaf",
     "price": 200000,
     "createdAt": "2026-03-10T00:00:00.000Z",
     "updatedAt": "2026-03-10T00:00:00.000Z",
@@ -51,7 +51,7 @@
     "id": 4,
     "category": "real_estate",
     "title": "Уютная комната в общежитии",
-    "description": "",
+    "description": "afasdf",
     "price": 15000,
     "createdAt": "2026-03-05T00:00:00.000Z",
     "updatedAt": "2026-03-05T00:00:00.000Z",
@@ -64,27 +64,32 @@
   },
   {
     "id": 5,
-    "category": "electronics",
-    "title": "Наушники JBL Tour one m2",
-    "description": "",
-    "price": 25000,
-    "createdAt": "2026-03-02T00:00:00.000Z",
-    "updatedAt": "2026-03-02T00:00:00.000Z",
+    "category": "real_estate",
+    "title": "Уютная комната в общежитии",
+    "description": "afasdf",
+    "price": 15000,
+    "createdAt": "2026-03-05T00:00:00.000Z",
+    "updatedAt": "2026-03-05T00:00:00.000Z",
     "params": {
-      "type": "misc",
-      "condition": "new",
-      "color": "Белый"
+      "type": "room",
+      "address": "г. Санкт-Петербург, Витебский проспект, 101к2",
+      "area": 7.6,
+      "floor": 2
     }
   },
   {
     "id": 6,
     "category": "electronics",
     "title": "Топовый MP3-плеер",
-    "description": "",
+    "description": "asfafd",
     "price": 1200,
     "createdAt": "2026-03-06T00:00:00.000Z",
     "updatedAt": "2026-03-06T00:00:00.000Z",
-    "params": {}
+    "params": {
+      "type": "misc",
+      "condition": "new",
+      "color": "Белый"
+    }
   },
   {
     "id": 7,
