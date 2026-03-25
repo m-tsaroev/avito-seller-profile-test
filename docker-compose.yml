@@ -18,7 +18,8 @@ services:
       - "11434:11434"
     volumes:
       - ollama_data:/root/.ollama
-    command: sh -c "ollama serve & sleep 5 && ollama pull llama3 && wait"
+    entrypoint: /bin/sh
+    command: -c "ollama serve & sleep 5 && ollama pull llama3 && wait"
 
 volumes:
   ollama_data:
