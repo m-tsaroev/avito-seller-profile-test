@@ -8,6 +8,11 @@
 	border-radius: 8px;
 	background-color: var(--mantine-color-body);
 	height: 32px;
+	position: relative;
+
+	&.hasLabel {
+		margin-top: 30px;
+	}
 
 	&.thinline {
 		border: 1px solid var(--mantine-color-body);
@@ -52,4 +57,14 @@
 	&:hover {
 		background-color: var(--mantine-color-white);
 	}
+}
+
+.label {
+	position: absolute;
+	top: -30px;
+	left: 0;
+}
+
+.asterisk {
+	color: #ff4d4f;
 }

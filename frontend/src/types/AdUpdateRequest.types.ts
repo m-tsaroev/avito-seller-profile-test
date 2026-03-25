@@ -4,7 +4,10 @@ export type ItemUpdateIn = {
 	title: string
 	description?: string
 	price: number
-	params: AutoItemParams | RealEstateItemParams | ElectronicsItemParams
+	params:
+		| Partial<AutoItemParams>
+		| Partial<RealEstateItemParams>
+		| Partial<ElectronicsItemParams>
 }
 
 export type AutoItemParams = {

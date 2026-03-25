@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import { TextInput } from '@mantine/core'
 import { type ChangeEvent } from 'react'
 import { FaPlus } from 'react-icons/fa6'
 
@@ -13,47 +13,71 @@ const Field = (props: FieldProps) => {
 		placeholder,
 		setValue,
 		label,
-		hideLabel = false,
 		icon: Icon,
-		variant = 'default'
+		variant = 'default',
+		w,
+		error,
+		required = false,
+		labelSize = 'sm',
+		onChange
 	} = props
 
 	const onCrossClick = () => {
-		setValue('')
+		setValue?.('')
 	}
 
 	const onFieldChange = (event: ChangeEvent<HTMLInputElement>) => {
-		setValue(event.target.value)
+		setValue?.(event.target.value)
 	}
+	const labelNode = required ? (
+		<span>
+			<span className={styles.asterisk}>*</span> {label}
+		</span>
+	) : (
+		label
+	)
 
 	return (
-		<div
-			className={clsx(styles.field, {
-				[styles[variant]]: variant
-			})}
-		>
-			<label
-				className={clsx(styles.label, { 'visually-hidden': hideLabel })}
-				htmlFor={id}
-			>
-				{label}
-			</label>
-			<input
-				id={id}
-				type={type}
-				value={value}
-				placeholder={placeholder}
-				onChange={onFieldChange}
-				className={styles.input}
-			/>
-			{value ? (
-				<button type='button' className={styles.cross} onClick={onCrossClick}>
-					<FaPlus />
-				</button>
-			) : (
-				Icon && <Icon />
-			)}
-		</div>
+		<TextInput
+			id={id}
+			name={id}
+			type={type}
+			label={labelNode}
+			variant={variant}
+			radius='8px'
+			placeholder={placeholder}
+			size='xs'
+			value={value}
+			onChange={onChange ?? onFieldChange}
+			rightSection={
+				value ? (
+					<button type='button' className={styles.cross} onClick={onCrossClick}>
+						<FaPlus />
+					</button>
+				) : (
+					Icon && <Icon />
+				)
+			}
+			w={w}
+			error={error}
+			labelProps={
+				labelSize === 'l'
+					? {
+							style: {
+								fontSize: '16px',
+								fontWeight: 600,
+								lineHeight: 1.4
+							}
+						}
+					: {
+							style: {
+								fontSize: '14px',
+								fontWeight: 400,
+								lineHeight: 1.5
+							}
+						}
+			}
+		/>
 	)
 }
 

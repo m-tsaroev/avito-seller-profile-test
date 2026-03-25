@@ -10,3 +10,10 @@
 	align-items: center;
 	column-gap: 4px;
 }
+
+.loader {
+	@include flex-center;
+
+	width: 100%;
+	min-height: 550px;
+}

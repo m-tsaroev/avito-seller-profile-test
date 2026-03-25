@@ -1,6 +1,6 @@
 import axios, { type CreateAxiosDefaults } from 'axios'
 
-import { URL } from '@/config/endpoints'
+import { URL } from '@/config/endpoints.config'
 
 const options: CreateAxiosDefaults = {
 	baseURL: URL,

@@ -9,6 +9,7 @@ import type { AdResponse } from '@/types/AdResponse.types'
 
 export const useAd = (id: number) => {
 	const setAd = useAdInfoStore(state => state.setAd)
+	const setIsLoading = useAdInfoStore(state => state.setIsLoading)
 
 	const { data, isPending, isFetching, isSuccess } = useQuery<AdResponse>({
 		queryKey: ['ad', id],
@@ -20,7 +21,9 @@ export const useAd = (id: number) => {
 		if (isSuccess) {
 			setAd(data)
 		}
-	}, [isSuccess, setAd, data])
+
+		setIsLoading(isFetching && isPending)
+	}, [isSuccess, data, isFetching, isPending, setAd, setIsLoading])
 
 	return { data, isPending, isFetching }
 }

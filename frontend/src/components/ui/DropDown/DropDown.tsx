@@ -5,18 +5,24 @@ import type { DropDownProps } from './DropDown.types'
 
 const DropDown = (props: DropDownProps) => {
 	const {
+		clearable = true,
 		label,
 		placeholder,
 		data,
 		value,
 		onChange,
 		onClear,
-		variant = 'default'
+		variant = 'default',
+		required = false,
+		w,
+		labelSize = 'sm',
+    error
 	} = props
 
 	return (
 		<Select
-			clearable
+			required={required}
+			clearable={clearable}
 			data={data}
 			value={value}
 			onChange={onChange}
@@ -25,9 +31,11 @@ const DropDown = (props: DropDownProps) => {
 			label={label}
 			rightSection={<IoIosArrowDown />}
 			checkIconPosition='right'
+      error={error}
 			size='xs'
 			radius='md'
 			miw='240px'
+			w={w}
 			styles={{
 				input: {
 					border:
@@ -36,6 +44,25 @@ const DropDown = (props: DropDownProps) => {
 							: ''
 				}
 			}}
+			labelProps={
+				labelSize === 'l'
+					? {
+							style: {
+								fontSize: '16px',
+								fontWeight: 600,
+								lineHeight: 1.4,
+								marginBottom: 8
+							}
+						}
+					: {
+							style: {
+								fontSize: '14px',
+								fontWeight: 400,
+								lineHeight: 1.5,
+								marginBottom: 8
+							}
+						}
+			}
 		/>
 	)
 }

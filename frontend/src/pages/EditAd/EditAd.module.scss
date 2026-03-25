@@ -1,0 +1,14 @@
+.section {
+	margin-top: 32px;
+	background-color: var(--mantine-color-white);
+	padding: 32px;
+	border-radius: 16px;
+
+	@include when-dark {
+		background-color: var(--mantine-color-dark-6);
+	}
+}
+
+// .body {
+// 	max-width: 500px;
+// }

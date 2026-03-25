@@ -5,12 +5,12 @@ import { motion } from 'framer-motion'
 import { DropDown } from '@/components/ui/DropDown'
 import { FormatSwitch } from '@/components/ui/FormatSwitch'
 import { Search } from '@/components/ui/Search'
+import { ThemeButton } from '@/components/ui/ThemeButton'
 
 import { useAdsFiltersStore } from '@/store/adsFilters'
 import { useTotalAdsStore } from '@/store/totalAds'
 
 import styles from './Header.module.scss'
-import { ThemeButton } from '@/components/ui/ThemeButton'
 
 const Header = () => {
 	const totalAdsCount = useTotalAdsStore(state => state.totalAds)
@@ -37,7 +37,7 @@ const Header = () => {
 							объявления
 						</Text>
 					</Group>
-          <ThemeButton />
+					<ThemeButton />
 				</Group>
 				<div className={styles.tools}>
 					<Search />

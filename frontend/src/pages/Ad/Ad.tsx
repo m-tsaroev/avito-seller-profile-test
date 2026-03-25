@@ -1,4 +1,4 @@
-import { Group, Text, Title } from '@mantine/core'
+import { Group, Loader, Text, Title } from '@mantine/core'
 import clsx from 'clsx'
 import { useParams } from 'react-router-dom'
 
@@ -13,35 +13,43 @@ import styles from './Ad.module.scss'
 const Ad = () => {
 	const { id } = useParams()
 
-	const { data } = useAd(Number(id))
+	const { data, isFetching, isPending } = useAd(Number(id))
 
 	return (
 		<>
 			<section>
 				<div className={clsx('container', styles.body)}>
-					<Group display='grid' gap='32px' className={styles.info}>
-						<ImagesSlider />
-						<Group display='grid' gap='16px' className={styles.description}>
-							<Title order={4}>Описание</Title>
-							<Text>
-								{data?.description === ''
-									? 'Описание отсутствует'
-									: data?.description}
-							</Text>
-						</Group>
-					</Group>
-					<div className={styles.characters}>
-						{data && (
-							<ImproveNotification
-								params={data.params}
-								category={data.category}
-							/>
-						)}
-						<Group display='grid' gap='16px'>
-							<Title order={4}>Характеристики</Title>
-							{data && <CharactersList params={data?.params} />}
-						</Group>
-					</div>
+					{isFetching || isPending ? (
+						<div className={styles.loader}>
+							<Loader color='teal' type='bars' size='lg' />
+						</div>
+					) : (
+						<>
+							<Group display='grid' gap='32px' className={styles.info}>
+								<ImagesSlider />
+								<Group display='grid' gap='16px' className={styles.description}>
+									<Title order={4}>Описание</Title>
+									<Text>
+										{data?.description === ''
+											? 'Описание отсутствует'
+											: data?.description}
+									</Text>
+								</Group>
+							</Group>
+							<div className={styles.characters}>
+								{data && (
+									<ImproveNotification
+										params={data.params}
+										category={data.category}
+									/>
+								)}
+								<Group display='grid' gap='16px'>
+									<Title order={4}>Характеристики</Title>
+									{data && <CharactersList params={data?.params} />}
+								</Group>
+							</div>
+						</>
+					)}
 				</div>
 			</section>
 		</>

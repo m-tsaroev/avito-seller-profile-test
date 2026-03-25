@@ -1,7 +1,7 @@
 export const AUTO_CHARACTERS = {
 	brand: 'Бренд',
 	model: 'Модель',
-	yearOfManufacture: 'Производитель',
+	yearOfManufacture: 'Год производства',
 	transmission: 'Трансмиссия',
 	mileage: 'Пробег',
 	enginePower: 'Мощьность двигателя'

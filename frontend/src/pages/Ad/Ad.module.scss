@@ -8,3 +8,10 @@
 	flex-direction: column;
 	row-gap: 32px;
 }
+
+.loader {
+	@include flex-center;
+
+	width: 100%;
+	min-height: 550px;
+}

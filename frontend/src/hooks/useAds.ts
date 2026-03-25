@@ -33,7 +33,6 @@ export const useAds = () => {
 				sortDirection
 			],
 			queryFn: () => {
-
 				return adsService.getAds({
 					q,
 					limit,

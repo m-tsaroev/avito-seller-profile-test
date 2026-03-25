@@ -1,4 +1,4 @@
 export type StoreParams = {
-  isListFormat: boolean
-  setIsListFormat: (is: boolean) => void
+	isListFormat: boolean
+	setIsListFormat: (is: boolean) => void
 }

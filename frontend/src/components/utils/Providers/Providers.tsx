@@ -26,6 +26,11 @@ const theme = createTheme({
 				fontSize: '16px',
 				lineHeight: '1.5',
 				fontWeight: '400'
+			},
+			h6: {
+				fontSize: '12px',
+				fontWeight: '600',
+				lineHeight: '1.3'
 			}
 		}
 	}

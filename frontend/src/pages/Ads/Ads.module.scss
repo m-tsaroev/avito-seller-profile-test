@@ -13,10 +13,9 @@
 }
 
 .loader {
+	@include flex-center;
+
 	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	min-height: 550px;
 }
 
@@ -33,67 +32,5 @@
 		max-height: 570px;
 		overflow: hidden;
 		overflow-y: auto;
-	}
-}
-
-.ad {
-	display: grid;
-	row-gap: 22px;
-	border-color: #f0f0f0;
-	min-height: 240px;
-
-	&.listFormat {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		column-gap: 24px;
-		row-gap: 0;
-		min-height: auto;
-		height: 132px;
-		padding: 0;
-	}
-}
-
-.head {
-	position: relative;
-}
-
-.typeBadge {
-	position: absolute;
-	bottom: 0;
-	left: 12px;
-	translate: 0 50%;
-	padding-inline: 12px;
-	border-radius: 6px;
-	border: 1px solid #d9d9d9;
-	background-color: var(--mantine-color-body);
-
-	@include when-dark {
-		border: 1px solid var(--mantine-color-dark-4);
-	}
-
-	&.listFormat {
-		position: static;
-		border: none;
-		background: none;
-		padding: 0;
-		font-size: 14px;
-	}
-}
-
-.badge {
-	background-color: #f9f1e6 !important;
-
-	@include when-dark {
-		background-color: var(--mantine-color-white) !important;
-	}
-
-	span {
-		color: #faad14;
-		text-transform: none;
-
-		@include when-dark {
-			color: #000000;
-		}
 	}
 }

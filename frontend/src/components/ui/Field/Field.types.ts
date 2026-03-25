@@ -1,13 +1,21 @@
+import type { ChangeEvent } from 'react'
 import type { IconType } from 'react-icons/lib'
 
-export type FieldProps = {
+type FieldActions = {
+	value?: string | number
+	setValue?: (value: string | ((prevState: string) => string)) => void
+}
+
+export type FieldProps = FieldActions & {
 	id: string
 	type: string
-	label: string
-	hideLabel?: boolean
+	label?: string
+	required?: boolean
 	placeholder: string
-	value: string
-	setValue: (value: string | ((prevState: string) => string)) => void
 	icon?: IconType
-	variant?: 'default' | 'thinline'
+	variant?: 'default' | 'filled'
+	w?: string
+	error?: string
+	labelSize?: 'sm' | 'l'
+	onChange?: (event: ChangeEvent<HTMLInputElement>) => void
 }

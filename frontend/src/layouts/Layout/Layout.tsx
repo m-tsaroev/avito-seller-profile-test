@@ -1,7 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom'
 
 import { AdHeader } from '@/components/layout/AdHeader'
-import { EditHeader } from '@/components/layout/EditHeader'
 import { Header } from '@/components/layout/Header'
 
 const Layout = () => {
@@ -15,7 +14,7 @@ const Layout = () => {
 
 	return (
 		<>
-			{isAdPage ? <AdHeader /> : isEditPage ? <EditHeader /> : <Header />}
+			{isAdPage ? <AdHeader /> : isEditPage ? null : <Header />}
 			<main>
 				<Outlet />
 			</main>

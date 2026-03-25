@@ -4,7 +4,7 @@ import { Ad } from '@/pages/Ad'
 import { Ads } from '@/pages/Ads'
 import { EditAd } from '@/pages/EditAd'
 
-import { PATHS } from '@/config/paths'
+import { PATHS } from '@/config/paths.config'
 
 import { Layout } from '@/layouts/Layout'
 

@@ -25,13 +25,13 @@ const Search = () => {
 	return (
 		<Field
 			id='search'
-			label='search'
-			hideLabel
 			value={searchTerm}
 			setValue={setSearchTerm}
 			placeholder='Найти объявление....'
 			type='search'
 			icon={IoSearchSharp}
+			variant='filled'
+			w='100%'
 		/>
 	)
 }

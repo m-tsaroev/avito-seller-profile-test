@@ -1,4 +1,12 @@
-import { Box, Button, Checkbox, Collapse, Switch, Title, useMantineColorScheme } from '@mantine/core'
+import {
+	Box,
+	Button,
+	Checkbox,
+	Collapse,
+	Switch,
+	Title,
+	useMantineColorScheme
+} from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 
@@ -9,7 +17,7 @@ import styles from './FiltersSidebar.module.scss'
 const FiltersSidebar = () => {
 	const [opened, { toggle }] = useDisclosure(false)
 
-  const {colorScheme} = useMantineColorScheme()
+	const { colorScheme } = useMantineColorScheme()
 
 	const categories = useAdsFiltersStore(state => state.categories)
 	const toggleCategories = useAdsFiltersStore(state => state.toggleCategory)
