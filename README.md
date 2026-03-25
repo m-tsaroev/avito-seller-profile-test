@@ -31,7 +31,7 @@
 
    ```bash
    git clone https://github.com/m-tsaroev/avito-seller-profile-test.git
-   cd avito-seller-dashboard
+   cd avito-seller-profile-test
    ```
 
 2. **Запустите все сервисы**
