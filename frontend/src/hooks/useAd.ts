@@ -11,7 +11,7 @@ export const useAd = (id: number) => {
 	const setAd = useAdInfoStore(state => state.setAd)
 	const setIsLoading = useAdInfoStore(state => state.setIsLoading)
 
-	const { data, isPending, isFetching, isSuccess } = useQuery<AdResponse>({
+	const { data, isPending, isFetching, isSuccess, refetch } = useQuery<AdResponse>({
 		queryKey: ['ad', id],
 		queryFn: () => adsService.getAd(id),
 		retry: 2
@@ -25,5 +25,5 @@ export const useAd = (id: number) => {
 		setIsLoading(isFetching && isPending)
 	}, [isSuccess, data, isFetching, isPending, setAd, setIsLoading])
 
-	return { data, isPending, isFetching }
+	return { data, isPending, isFetching, refetch }
 }

@@ -1,4 +1,5 @@
 import { MantineProvider, createTheme } from '@mantine/core'
+import { Notifications } from '@mantine/notifications'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { useState } from 'react'
 import { RouterProvider } from 'react-router-dom'
@@ -50,12 +51,25 @@ const Providers = () => {
 	)
 
 	return (
-		<QueryClientProvider client={client}>
-			<MantineProvider theme={theme} defaultColorScheme='light'>
+		<MantineProvider theme={theme} defaultColorScheme='light'>
+			<Notifications
+				position='top-center'
+				styles={{
+					root: {
+						position: 'fixed',
+						top: 30,
+						left: '50%',
+						right: 0,
+						zIndex: 1000,
+						translate: '-25% 0'
+					}
+				}}
+			/>
+			<QueryClientProvider client={client}>
 				<ThemeFavicon />
 				<RouterProvider router={router} />
-			</MantineProvider>
-		</QueryClientProvider>
+			</QueryClientProvider>
+		</MantineProvider>
 	)
 }
 

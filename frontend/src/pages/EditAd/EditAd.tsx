@@ -11,7 +11,7 @@ import styles from './EditAd.module.scss'
 const EditAd = () => {
 	const { id } = useParams()
 
-	const { data } = useAd(Number(id))
+	const { data, refetch } = useAd(Number(id))
 
 	return (
 		<section className={clsx('container', styles.section)}>
@@ -19,7 +19,7 @@ const EditAd = () => {
 				<Title order={1}>Редактирование объявления</Title>
 			</header>
 			<div className={styles.body}>
-				{id && data && <Form id={Number(id)} data={data} />}
+				{id && data && <Form id={Number(id)} data={data} refetchFn={refetch} />}
 			</div>
 		</section>
 	)

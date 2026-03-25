@@ -18,11 +18,11 @@ import { AutoFields } from './components/AutoFields'
 import { RealEstateFields } from './components/RealEstateFields'
 
 const Form = (props: FormProps) => {
-	const { data } = props
+	const { data, refetchFn } = props
 
 	const navigate = useNavigate()
 
-	const { form, onSubmit, isPending } = useUpdateForm(data)
+	const { form, onSubmit, isPending } = useUpdateForm(data, refetchFn)
 
 	const [currentCategory, setCurrentCategory] = useState('')
 
@@ -181,8 +181,6 @@ const Form = (props: FormProps) => {
 					radius={8}
 					c='dark'
 					bg='#D9D9D9'
-					type='submit'
-					disabled={isPending}
 					onClick={() => {
 						navigate(-1)
 					}}

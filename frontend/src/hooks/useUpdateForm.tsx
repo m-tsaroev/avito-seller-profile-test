@@ -1,6 +1,12 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useMutation } from '@tanstack/react-query'
+import { notifications } from '@mantine/notifications'
+import {
+	type QueryObserverResult,
+	type RefetchOptions,
+	useMutation
+} from '@tanstack/react-query'
 import { useForm } from 'react-hook-form'
+import { FaRegCircleCheck } from 'react-icons/fa6'
 import { z } from 'zod'
 
 import { adsService } from '@/services/ads.services'
@@ -126,7 +132,12 @@ export const getDefaultParams = (category: AdFormValues['category']) => {
 	}
 }
 
-export const useUpdateForm = (data: AdResponse) => {
+export const useUpdateForm = (
+	data: AdResponse,
+	refetchFn: (
+		options?: RefetchOptions | undefined
+	) => Promise<QueryObserverResult<AdResponse, Error>>
+) => {
 	const form = useForm<AdFormValues>({
 		resolver: zodResolver(adFormSchema),
 		defaultValues: getDefaultValues(data)
@@ -134,7 +145,18 @@ export const useUpdateForm = (data: AdResponse) => {
 
 	const { mutate, isPending } = useMutation({
 		mutationKey: ['updateAd'],
-		mutationFn: (data: ItemUpdateIn) => adsService.updateAd(data)
+		mutationFn: (data: ItemUpdateIn) => adsService.updateAd(data),
+		onSuccess: () => {
+			refetchFn()
+			notifications.show({
+				title: 'Успешно!',
+				message: 'Объявление сохранено',
+				color: 'green',
+				icon: <FaRegCircleCheck />,
+				autoClose: 3000,
+				w: '400px'
+			})
+		}
 	})
 
 	const onSubmit = (formData: AdFormValues) => {
