@@ -12,12 +12,7 @@ import { z } from 'zod'
 import { adsService } from '@/services/ads.services'
 
 import type { AdResponse } from '@/types/AdResponse.types'
-import type {
-	AutoItemParams,
-	ElectronicsItemParams,
-	ItemUpdateIn,
-	RealEstateItemParams
-} from '@/types/AdUpdateRequest.types'
+import type { ItemUpdateIn } from '@/types/AdUpdateRequest.types'
 
 const numberField = z.coerce.number<number>().optional()
 
@@ -69,35 +64,17 @@ const adFormSchema = adFormBaseSchema.and(
 export type AdFormValues = z.infer<typeof adFormSchema>
 
 const getDefaultValues = (data: AdResponse): AdFormValues => {
-	const { category, title, price, description, params } = data
+	const { title, price, description } = data
 
-	switch (category) {
+	switch (data.category) {
 		case 'auto':
-			return {
-				category,
-				title,
-				price,
-				description,
-				params: params as AutoItemParams
-			}
+			return { category: 'auto', title, price, description, params: data.params }
 
 		case 'real_estate':
-			return {
-				category,
-				title,
-				price,
-				description,
-				params: params as RealEstateItemParams
-			}
+			return { category: 'real_estate', title, price, description, params: data.params }
 
 		case 'electronics':
-			return {
-				category,
-				title,
-				price,
-				description,
-				params: params as ElectronicsItemParams
-			}
+			return { category: 'electronics', title, price, description, params: data.params }
 	}
 }
 
@@ -161,7 +138,7 @@ export const useUpdateForm = (
 
 	const onSubmit = (formData: AdFormValues) => {
 		const payload: ItemUpdateIn = {
-			id: data.id, // 👈 берём из пропсов
+			id: data.id,
 			...formData
 		}
 
